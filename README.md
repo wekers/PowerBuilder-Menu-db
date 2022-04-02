@@ -14,7 +14,7 @@ Como fica a Tela -> Setar as Permissões de Menus por Usuário(a).
 
 ![](imagens/Imagem02.png)
 ***
-####Cenário:
+#### Cenário:
 ![](imagens/Imagem01_usercase.png)
 ***
 ## 1. Criar as tabelas e colunas no banco de dados, conforme os menus atuais do sistema.
@@ -148,10 +148,10 @@ close(this)
 
 * * *
 
->#####**Diagrama do Banco de Dados:**
+>##### **Diagrama do Banco de Dados:**
 ![](imagens/Imagem03.png)
 
-##2. Criar a Datawindow, conforme syntax sql
+## 2. Criar a Datawindow, conforme syntax sql
 *Este é um exemplo de ++nomes de MENU++ que foi criado anteriormente.*
 
 ```sql
@@ -241,7 +241,7 @@ close(this)
 
 ![](imagens/Imagem06.png)
 
-##3. Recuperar os dados das colunas que estão no banco de dados na `window`-> `tab_1` ++*evento*++: `selectionchanging`
+## 3. Recuperar os dados das colunas que estão no banco de dados na `window`-> `tab_1` ++*evento*++: `selectionchanging`
 ![](imagens/Imagem07.png)
 
 > **Conforme código abaixo:**
@@ -347,7 +347,7 @@ string ls_name, ls_name_niv2, ls_name_niv3, ls_name_text;
 
 	next //fecha laço for nivel 1
 ```
-**3.1. Gravar, salvar as informações dos checkbox:**
+** 3.1. Gravar, salvar as informações dos checkbox:**
 Na `window` no botão ++`Salvar Permissões`++ de nome `cb_salvar` -> ++evento++ `clicked`.
 **O código a seguir:**
 ```cpp
@@ -444,7 +444,7 @@ NEXT
 tab_1.tabpage_2.cb_salvar.enabled = true
 
 ```
-##4. Adicionar, Salvar ou Excluir um Novo Usuário:
+## 4. Adicionar, Salvar ou Excluir um Novo Usuário:
 **4.1. Suponha que você tenha um `botão principal` e um evento global para cada window ex: `ue_inclui`:**
 ![](imagens/Imagem08.png)
 
@@ -649,7 +649,7 @@ if (incluir) then
 end if
 
 ```
-##4. Recuperar as informações na Abertura do Software ++*de qual menu*++ está liberado para o Usuário, ++conforme foi setado?++
+## 4. Recuperar as informações na Abertura do Software ++*de qual menu*++ está liberado para o Usuário, ++conforme foi setado?++
 
 **Na window principal a qual foi ++inherited++, no evento: ++`open`++, o seguinte código:**
 
