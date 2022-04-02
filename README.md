@@ -17,16 +17,20 @@ Como fica a Tela -> Setar as Permissões de Menus por Usuário(a).
 #### Cenário:
 ![](imagens/Imagem01_usercase.png)
 ***
-## 1. Criar as tabelas e colunas no banco de dados, conforme os menus atuais do sistema.
+## 1. Gerar as tabelas e colunas no banco de dados, conforme os menus atuais do sistema.
 
 **1.1. Requisito: Ter a tabela "usuarios" no db**
+
 ![](imagens/Imagem04.png)
 
-**1.2. Deve-se criar uma **`Window`** ou um **`button`,** após adicionar e executar o script CRIAR DB NOMES MENUS:**
+**1.2. Deve-se criar uma nova **`Window`** ou um **`button`,** após adicionar e executar o script: CRIAR DB NOMES MENUS**
 
 Diagrama de Atividade:
+
 ![](imagens/Imagem01_ativ.png)
-(ao executá-lo, vai criar as tabelas e as colunas no db automáticamente, conforme o nome dos menus)
+
+(ao executá-lo, vai gerar/criar as tabelas e as colunas no db automáticamente, conforme o nome dos menus)
+
 *Este Script se deve executar apenas uma vez.*
 
 ```cpp
@@ -151,8 +155,9 @@ close(this)
 >##### **Diagrama do Banco de Dados:**
 ![](imagens/Imagem03.png)
 
+* * *
 ## 2. Criar a Datawindow, conforme syntax sql
-*Este é um exemplo de ++nomes de MENU++ que foi criado anteriormente.*
+*Este é um exemplo de <ins>nomes de MENU</ins> que foi gerado anteriormente.*
 
 ```sql
   SELECT "m_usuarios"."m_cadastro_usuario",   
@@ -227,21 +232,22 @@ close(this)
 
 ```
 ***
->** Exemplo da Datawindow: (Obs. sem Text no menu ++Edit++ das colunas!)**
+> **- Propriedades da Datawindow: (Obs. sem Text no menu <ins>Edit</ins> das colunas!)**
 
 ![](imagens/Imagem05_1.png)
 
 ![](imagens/Imagem05.png)
 
->** Pois o mesmo vai puxar pelo nome do ++Text++ do próprio menu, no código a seguir: RECUPERAR DADOS**
+> **- Pois o mesmo vai puxar pelo nome da <ins>Text</ins> do próprio menu, no código a seguir: RECUPERAR DADOS**
 
 ![](imagens/Imagem05_2.png)
 
-**Na Window, adiciona a `datawindow`, um `button` de título ++ Salvar Permissões++ e um `checkbox` de título ++Selecionar Todos++:**
+> **- Na Window, adiciona a `datawindow`, um `button` de título <ins>Salvar Permissões</ins> e um `checkbox` de título <ins>Selecionar Todos</ins>:**
 
 ![](imagens/Imagem06.png)
 
-## 3. Recuperar os dados das colunas que estão no banco de dados na `window`-> `tab_1` ++*evento*++: `selectionchanging`
+***
+## 3. Recuperar os dados das colunas que estão no banco de dados na `window`-> `tab_1` <ins>*evento*</ins>: `selectionchanging`
 ![](imagens/Imagem07.png)
 
 > **Conforme código abaixo:**
@@ -347,9 +353,10 @@ string ls_name, ls_name_niv2, ls_name_niv3, ls_name_text;
 
 	next //fecha laço for nivel 1
 ```
-** 3.1. Gravar, salvar as informações dos checkbox:**
-Na `window` no botão ++`Salvar Permissões`++ de nome `cb_salvar` -> ++evento++ `clicked`.
-**O código a seguir:**
+---
+**3.1. Gravar, salvar as informações dos checkbox:**
+Na `window` no botão <ins>`Salvar Permissões`</ins> de nome `cb_salvar` -> <ins>evento</ins> `clicked`.
+
 ```cpp
 // **** GRAVAR/SALVAR DATAWINDOW (botão: cb_salvar -> evento: clicked) ****
 
@@ -414,8 +421,9 @@ this.enabled = false
 
 messagebox("Permissões!","As permissões de [ "+ string(cod_u)+" - "+nome+" ], foram salvas!")
 ```
-**3.2. Checkbox, *++Selecionar Todos++* -> exemplo de nome `cbx_sel_todos`:**
--> ++evento++ `clicked`
+---
+**3.2. Checkbox, *<ins>Selecionar Todos</ins>* -> exemplo de nome `cbx_sel_todos`:**
+-> <ins>evento</ins> `clicked`
 ```cpp
 // **** SELECIONAR TODOS Checkbox (cbx_sel_todos -> evento: clicked) ****
 
@@ -444,6 +452,7 @@ NEXT
 tab_1.tabpage_2.cb_salvar.enabled = true
 
 ```
+---
 ## 4. Adicionar, Salvar ou Excluir um Novo Usuário:
 **4.1. Suponha que você tenha um `botão principal` e um evento global para cada window ex: `ue_inclui`:**
 ![](imagens/Imagem08.png)
@@ -472,6 +481,7 @@ m_incluir = false
 incluir = true
 ```
 **4.2. Excluir `botão principal` e um evento global da window ex: `ue_excluir`:**
+
 **Código, `ue_excluir`:**
 
 ```cpp
@@ -575,6 +585,7 @@ End If //fecha if existe venda
 ```
 
 **4.3. Confirmar/Salvar `botão principal` e um evento global da window ex: `ue_salvar`:**
+
 **Código, `ue_salvar`:**
 
 ```cpp
@@ -649,9 +660,9 @@ if (incluir) then
 end if
 
 ```
-## 4. Recuperar as informações na Abertura do Software ++*de qual menu*++ está liberado para o Usuário, ++conforme foi setado?++
+## 5. Recuperar as informações na Abertura do Software <ins>*de qual menu*</ins> está liberado para o Usuário, <ins>conforme foi setado?</ins>
 
-**Na window principal a qual foi ++inherited++, no evento: ++`open`++, o seguinte código:**
+**Na window principal a qual foi <ins>inherited</ins>, no evento: <ins>`open`</ins>**
 
 ```java
 // **** JANELA PRINCIPAL - Tela inicial -> após login ( evento: open) ****
@@ -772,5 +783,7 @@ End If
 ## Pré-requisitos
 
 Foi testado no PowerBuilder 12.5 (Sybase, SAP), 2017 R2 (Appeon).
+
 Sybase SQL Anywhere 9
+
 OS: Windows 7 e Windows 10 (x86 e x64)
